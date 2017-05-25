@@ -12,8 +12,8 @@ sub connect_to_oracle {
     my $driver   = "oracle";
     my $database = "heron";
     my $dsn      = "DBI:$driver:database=$database;sid=sh;port=1526";
-    my $userid   = "bmcclint";
-    my $password = "6720685_mag";
+    my $userid   = "xxxxx";
+    my $password = "yyyyy";
  
 	my $dbh = DBI->connect("dbi:Oracle:host=heron;sid=sh;port=1526, $userid, $password");
  
