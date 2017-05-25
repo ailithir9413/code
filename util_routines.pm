@@ -15,7 +15,7 @@ sub connect_to_oracle {
     my $userid   = "xxxxx";
     my $password = "yyyyy";
  
-	my $dbh = DBI->connect("dbi:Oracle:host=heron;sid=sh;port=1526, $userid, $password");
+	my $dbh = DBI->connect("dbi:Oracle:host=zzzzz;sid=sh;port=1526, $userid, $password");
  
     #my $dbh = DBI->connect( $dsn, $userid, $password ) or die $DBI::errstr;
 	
