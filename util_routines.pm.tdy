@@ -1,0 +1,67 @@
+# Barry McClintock 3 May 2017
+
+use strict;
+use warnings;
+
+package util_routines;
+
+use DBI;
+
+sub connect_to_oracle {
+    my $driver   = "oracle";
+    my $database = "TESTDB";
+    my $dsn      = "DBI:$driver:database = $database";
+    my $userid   = "testuser";
+    my $password = "test123";
+
+    my $dbh = DBI->connect( $dsn, $userid, $password ) or die $DBI::errstr;
+    return $dbh;
+}
+
+sub create_metadata {
+    my $sql = qq(create table_metadata_1 {
+		imagename  		text not null,
+		lat        		numeric(10,6), 
+		lon        		numeric(11,6), 
+		head       		numeric(12,2), 
+		roll       		numeric(22,2), 
+		pitch      		numeric(7,2) , 
+		alt1       		numeric(12,2), 
+		alt2       		numeric(12,2), 
+		sonar_alt  		numeric(12,2), 
+		bot_alt    		numeric(12,2), 
+		alt_smo    		numeric(12,2), 
+		t          		numeric(7,2) , 
+		p          		numeric(7,2) , 
+		s          		numeric(7,2) , 
+		bottom_depth	numeric(7,2) , 
+		t2         		numeric(7,2) , 
+		p2         		numeric(7,2) , 
+		o2         		numeric(7,2) , 
+		s2         		numeric(7,2) , 
+		backscatter		numeric(7,2) , 
+		chlorophyll		numeric(7,2) , 
+		cdom       		numeric(7,2) , 
+		thegeom    		geometry  	 ,
+		camera     		text      	 ,
+		fov_v2     		numeric(7,2) , 
+		fov_v4     		numeric(7,2) , 
+		mm_px_v2   		numeric(7,2) , 
+		mm_px_v4   		numeric(7,2) , 
+		cruise_id  		text      
+		timestamp  		timestamp, 
+		fov        		numeric(7,2) , 
+		mm_px      		numeric(7,2) , 
+		alt        		numeric(12,2), 
+		speed      		numeric(6,2) , 
+		depth      		numeric(7,2) , 
+		vehicle_depth	numeric(7,2) , 
+		therm      		integer   
+		internal_ph		numeric(7,4) ,
+		external_ph		numeric(7,4) , 
+		ss				numeric(7,2,
+		)
+	)
+}
+
+1;
