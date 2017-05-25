@@ -6,10 +6,10 @@ use warnings;
 use DBI;
 
 my $dbname 	= 'habcam';  
-my $host 		= '155.206.69.38';  
+my $host 		= '.69.38';  
 my $port 		= 10221;  
-my $username 	= 'postgres';  
-my $password 	= 'isawesome';  
+my $username 	= '';  
+my $password 	= '';  
 
 
 
