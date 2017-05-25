@@ -8,8 +8,8 @@ use DBI;
 my $dbname 	= 'habcam';  
 my $host 		= '155.206.69.38';  
 my $port 		= 10221;  
-my $username 	= 'postgres';  
-my $password 	= 'isawesome';  
+my $username 	= '';  
+my $password 	= '';  
 
 my $dbh = DBI->connect("dbi:Pg:dbname=habcam;
 						host=$host;
