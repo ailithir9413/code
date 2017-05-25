@@ -10,7 +10,7 @@ use DBI;
 # -----------------------------------------------------------------
 sub connect_to_oracle {
     my $driver   = "oracle";
-    my $database = "heron";
+    my $database = "zzzzz";
     my $dsn      = "DBI:$driver:database=$database;sid=sh;port=1526";
     my $userid   = "xxxxx";
     my $password = "yyyyy";
