@@ -1,0 +1,73 @@
+use strict;
+use warnings;
+
+package construct_options;
+
+sub get_options {
+    my ( $type, $option ) = @_;
+    my %hash    = ();
+    my $options = q{};
+
+    if ( $type eq 'dropdown' ) {
+        if ( $option eq 'assignment' ) {
+            %hash = (
+                cruise_1 => 'Cruise 1',
+                cruise_2 => 'Cruise 2',
+                cruise_3 => 'Cruise 3',
+            );
+        }
+
+        elsif ( $option eq 'sediment' ) {
+            %hash = (
+                fine   => 'fine',
+                medium => 'medium',
+                coarse => 'coarse',
+            );
+        }
+
+        # constructing a variable that the HERE document will #interpolate
+
+        for my $p ( sort keys %hash ) {
+            $options .= sprintf qq(\t<option value="%s">%s</option>\n),
+              $hash{$p}, $p;
+        }
+    }
+
+    elsif ( $type eq 'checkbox' ) {
+        if ( $option eq 'biotic' ) {
+            %hash = (
+                trout       => 'trout',
+                little_fish => 'little_fish',
+                mermaid     => 'mermaid',
+            );
+        }
+        elsif ( $option eq 'bottom_type' ) {
+            %hash = (
+                sand_ripples => 'sand ripples',
+                sand_waves   => 'sand waves',
+                gravel       => 'gravel',
+                cobble       => 'cobble',
+            );
+        }
+        elsif ( $option eq 'sediment' ) {
+            %hash = (
+                fine   => 'fine',
+                medium => 'medium',
+                coarse => 'coarse',
+                none   => 'none',
+            );
+        }
+
+        foreach my $p ( sort keys %hash ) {
+
+            # print "constructing string for $p and $hash{$p}\n";
+            $options .=
+              sprintf
+qq(<br><label><input type="checkbox" name="%s" value="%s">$p</label>\n),
+              $option, $p;
+        }
+    }
+
+    return ($options);
+}
+1;
